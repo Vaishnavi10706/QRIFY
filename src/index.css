@@ -1,4 +1,48 @@
-:root {
+body {
+  color: #1F2937;
+  /* background-color: #F4F7FE; */
+  background-image: linear-gradient(45deg, #68bfeb, #67b26f);
+  text-align: center;
+}
+.card{
+  background-color: white;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: #1F2937;
+  
+}
+h1{
+  font-size: 3rem;
+  font-weight: 700;
+}
+input {
+  width: 350px;
+  padding: 12px;
+  border-radius: 8px;
+}
+button {
+  background-color: #4f46e5;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+}
+button:hover {
+  background-color: rgb(60, 25, 236);
+  transform: translateY(-2px);
+}
+.qr-box{
+  width: 220px;
+  height: 220px;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+/* :root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -52,6 +96,7 @@
 
 body {
   margin: 0;
+  color: #1F2937;
 }
 
 #root {
@@ -108,4 +153,4 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
-}
+} */
