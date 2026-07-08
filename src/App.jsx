@@ -6,13 +6,18 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
-  // const [count, setCount] = useState(0)
-
+  const [inputUrl, setInputUrl] = useState("");
+  const [qrValue, setQrValue] = useState("");
+  const handleGenerate = () => {
+  setQrValue(inputUrl);
+  };
   return (
     <div className='card'>
     <Navbar/>
-    <QRForm/>
-    <QRPreview/>
+    <QRForm inputUrl={inputUrl} setInputUrl={setInputUrl} handleGenerate={handleGenerate}/>
+    <QRPreview
+    qrValue={qrValue}
+/>
     <Footer/>
     </div>
   )

@@ -1,6 +1,6 @@
 import React from "react";
 
-function QRPreview() {
+function QRPreview({ qrValue }) {
   return (
     <>
       <div className="qr-box">
