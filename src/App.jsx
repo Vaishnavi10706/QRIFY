@@ -27,7 +27,7 @@ function App() {
     <div className='card'>
     <Navbar/>
     <QRForm inputUrl={inputUrl} setInputUrl={setInputUrl} handleGenerate={handleGenerate} error={error}/>
-    <QRPreview qrValue={qrValue}/>
+    <QRPreview qrValue={qrValue} copyUrl={qrValue}/>
     <Footer/>
     </div>
   )

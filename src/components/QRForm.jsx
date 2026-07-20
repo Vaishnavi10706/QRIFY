@@ -5,8 +5,8 @@ function QRForm({ inputUrl, setInputUrl, handleGenerate, error }) {
     <>
     <div>
       <input value={inputUrl} onChange={(e) => setInputUrl(e.target.value)} placeholder='Enter your Website Link'/>
-      {error && <p className="error">{error}</p>}
       <button onClick={handleGenerate}>Generate QR</button>
+      {error && <p className="error">{error}</p>}
     </div>
     </>
   )

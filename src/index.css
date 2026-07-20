@@ -48,3 +48,7 @@ button:hover {
   font-weight: 500;
   margin-top: 8px;
 }
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
