@@ -1,8 +1,10 @@
-import React,{ useState } from "react";
+import React,{ useState, useRef  } from "react";
 import QRCode from "react-qr-code";
+import { toPng } from "html-to-image";
 
 function QRPreview({ qrValue,copyUrl }) {
   const [copied, setCopied] = useState(false);
+  const qrRef = useRef(null);
   const handleCopy = async () => {
     try{
       await navigator.clipboard.writeText(copyUrl);
@@ -14,14 +16,25 @@ function QRPreview({ qrValue,copyUrl }) {
       alert('Failed to copy the URL.')
     }
   }
+  const handleDownload = async () => {
+    try{
+      const dataUrl = await toPng(qrRef.current)
+      const link = document.createElement("a");
+      link.href = dataUrl
+      link.download = "qr_code.png"
+      link.click();
+    } catch {
+      alert('Failed to download the QR code')
+    }
+  }
   return (
     <>
-      <div className="qr-box">
+      <div className="qr-box" ref={qrRef}>
         {!qrValue ? <p>QR code appers here</p> : (<QRCode value={qrValue}/>) }
       </div>
       <div>
         <button type="button" onClick={handleCopy} disabled={!qrValue}>{copied ? "Copied ✅" : "Copy QR"}</button>
-        <button type="button" disabled={!qrValue}>Download QR</button>
+        <button type="button" onClick={handleDownload} disabled={!qrValue}>Download QR</button>
       </div>
     </>
   );
