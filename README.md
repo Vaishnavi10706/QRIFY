@@ -59,7 +59,7 @@ src/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/qrify.git
+git clone https://github.com/Vaishnavi10706/qrify.git
 ```
 
 ### 2. Navigate into the project
