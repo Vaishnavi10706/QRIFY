@@ -1,12 +1,16 @@
-import React from 'react'
+import React from "react";
 
-function Navbar() {
+function Navbar({ theme, toggleTheme }) {
   return (
     <>
-    <h1>QRify</h1>
-    <h2>Generate and download QR codes for any website URL.</h2>
+      <div className="navbar">
+        <h1>QRify</h1>
+        <button onClick={toggleTheme}>
+          {theme == "light" ? "🌙 Dark Mode" : "🔆 Light Mode"}
+        </button>
+      </div>
+      <h2>Generate and download QR codes for any website URL.</h2>
     </>
-  )
+  );
 }
-
-export default Navbar
+export default Navbar;
