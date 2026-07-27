@@ -2,7 +2,7 @@ import React,{ useState, useRef  } from "react";
 import QRCode from "react-qr-code";
 import { toPng } from "html-to-image";
 
-function QRPreview({ qrValue,copyUrl }) {
+function QRPreview({ qrValue,copyUrl,fgColor,bgColor }) {
   const [copied, setCopied] = useState(false);
   const qrRef = useRef(null);
   const handleCopy = async () => {
@@ -30,7 +30,7 @@ function QRPreview({ qrValue,copyUrl }) {
   return (
     <>
       <div className="qr-box" ref={qrRef}>
-        {!qrValue ? <p>QR code appers here</p> : (<QRCode value={qrValue}/>) }
+        {!qrValue ? <p>QR code appers here</p> : (<QRCode value={qrValue} fgColor={fgColor} bgColor={bgColor}/>) }
       </div>
       <div>
         <button type="button" onClick={handleCopy} disabled={!qrValue}>{copied ? "Copied ✅" : "Copy QR"}</button>

@@ -3,13 +3,14 @@ import Navbar from './components/Navbar'
 import QRForm from './components/QRForm'
 import QRPreview from './components/QRPreview'
 import Footer from './components/Footer'
-import './App.css'
 
 function App() {
   const [inputUrl, setInputUrl] = useState("");
   const [qrValue, setQrValue] = useState("");
   const [error,setError] = useState("")
   const [theme,setTheme] = useState("light")
+  const [fgColor, setFgColor] = useState("#000000");
+  const [bgColor, setBgColor] = useState("#ffffff");
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
@@ -44,8 +45,8 @@ function App() {
   return (
     <div className='card'>
     <Navbar theme={theme} toggleTheme={toggleTheme}/>
-    <QRForm inputUrl={inputUrl} setInputUrl={setInputUrl} handleGenerate={handleGenerate} error={error}/>
-    <QRPreview qrValue={qrValue} copyUrl={qrValue}/>
+    <QRForm inputUrl={inputUrl} setInputUrl={setInputUrl} handleGenerate={handleGenerate} error={error} fgColor={fgColor} setFgColor={setFgColor} bgColor={bgColor} setBgColor={setBgColor}/>
+    <QRPreview qrValue={qrValue} copyUrl={qrValue} fgColor={fgColor} bgColor={bgColor}/>
     <Footer/>
     </div>
   )
