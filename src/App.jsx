@@ -1,55 +1,75 @@
-import { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
-import QRForm from './components/QRForm'
-import QRPreview from './components/QRPreview'
-import Footer from './components/Footer'
+import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import QRForm from "./components/QRForm";
+import QRPreview from "./components/QRPreview";
+import QRHistory from './components/QRHistory';
+import Footer from "./components/Footer";
 
 function App() {
   const [inputUrl, setInputUrl] = useState("");
   const [qrValue, setQrValue] = useState("");
-  const [error,setError] = useState("")
-  const [theme,setTheme] = useState("light")
+  const [error, setError] = useState("");
+  const [theme, setTheme] = useState("light");
   const [fgColor, setFgColor] = useState("#000000");
   const [bgColor, setBgColor] = useState("#ffffff");
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
   useEffect(() => {
-    if (theme === 'dark'){
-      document.body.classList.add('dark')
-    }else{
-      document.body.classList.remove('dark')
+    if (theme === "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
     }
-    localStorage.setItem('qrify-theme',theme)
-  },[theme])
+    localStorage.setItem("qrify-theme", theme);
+  }, [theme]);
   useEffect(() => {
-  const savedTheme = localStorage.getItem("qrify-theme");
-  if (savedTheme){
-    setTheme(savedTheme)
-  }
-}, []);
-  const handleGenerate = () => {
-    if(inputUrl.trim() === ""){
-      setError('Please enter a website URL.')
-      return
+    const savedTheme = localStorage.getItem("qrify-theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
     }
-    try{
-      new URL(inputUrl)
-      setError("")
+  }, []);
+
+  const [qrHistory, setQrHistory] = useState(() => {
+  const savedHistory = localStorage.getItem("qrify-history");
+
+  return savedHistory ? JSON.parse(savedHistory) : [];
+});
+
+useEffect(() => {
+  localStorage.setItem("qrify-history", JSON.stringify(qrHistory));
+}, [qrHistory]);
+  const handleGenerate = () => {
+    if (inputUrl.trim() === "") {
+      setError("Please enter a website URL.");
+      return;
+    }
+    try {
+      new URL(inputUrl);
+      setError("");
       setQrValue(inputUrl);
-    }catch {
+      setQrHistory((previousHistory) => [
+        ...previousHistory,
+        {
+          url: inputUrl,
+          fgColor: fgColor,
+          bgColor: bgColor,
+        },
+      ]);
+    } catch {
       setError("Please enter a valid website URL.");
-      return
+      return;
     }
   };
   return (
-    <div className='card'>
-    <Navbar theme={theme} toggleTheme={toggleTheme}/>
-    <QRForm inputUrl={inputUrl} setInputUrl={setInputUrl} handleGenerate={handleGenerate} error={error} fgColor={fgColor} setFgColor={setFgColor} bgColor={bgColor} setBgColor={setBgColor}/>
-    <QRPreview qrValue={qrValue} copyUrl={qrValue} fgColor={fgColor} bgColor={bgColor}/>
-    <Footer/>
+    <div className="card">
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <QRForm inputUrl={inputUrl} setInputUrl={setInputUrl} handleGenerate={handleGenerate} error={error} fgColor={fgColor} setFgColor={setFgColor} bgColor={bgColor} setBgColor={setBgColor}/>
+      <QRPreview qrValue={qrValue} copyUrl={qrValue} fgColor={fgColor} bgColor={bgColor}/>
+      <QRHistory qrHistory={qrHistory} />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
