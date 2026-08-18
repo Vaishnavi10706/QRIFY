@@ -21,6 +21,8 @@ The application focuses on a clean user experience by validating URLs before gen
 - 🚫 Prevent invalid URL generation
 - 🔒 Disabled action buttons until a QR code is generated
 - ⚡ Instant QR code generation
+- 🌙 Dark Mode
+- 🎨 Custom QR colors
 - 📱 Responsive and clean user interface
 
 ---
@@ -123,8 +125,6 @@ While building this project, I gained hands-on experience with:
 
 ## 🔮 Future Enhancements
 
-- 🌙 Dark Mode
-- 🎨 Custom QR colors
 - 🖼️ Logo inside QR code
 - 📜 QR generation history
 - 🔔 Toast notifications
