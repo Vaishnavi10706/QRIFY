@@ -82,7 +82,7 @@ npm install
 npm run dev
 ```
 
-Open your browser and visit:
+### 5. Open your browser and visit:
 
 ```
 http://localhost:5173
