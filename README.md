@@ -136,6 +136,8 @@ While building this project, I gained hands-on experience with:
 
 ## 👩‍💻 Author
 
-**Vaishnavi**
+Name: **Vaishnavi**
+
+---
 
 If you found this project useful, consider giving it a ⭐ on GitHub!
