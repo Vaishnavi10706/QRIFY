@@ -1,90 +1,101 @@
-# QRify 🔗
+# 🔗 QRify - QR Code Generator
 
-A modern and responsive QR Code Generator built with **React** that instantly converts website URLs into QR codes. Users can generate, copy, and download QR codes with built-in URL validation for a seamless experience.
+A modern and responsive **QR Code Generator** built with **React and Vite**. QRify allows users to instantly convert website URLs into QR codes with built-in validation, customization options, clipboard support, and PNG downloads.
+
+🔗 **Live Demo:** [QRify](https://qrify-swart.vercel.app/)
 
 ---
 
-## 📖 About
+## 📖 Overview
 
-QRify was created to simplify sharing website links. Instead of manually typing long URLs, users can generate a QR code that can be scanned instantly on any mobile device.
+QRify simplifies the process of sharing website links. Instead of manually typing or copying long URLs, users can generate a scannable QR code that can be accessed instantly from any compatible mobile device.
 
-The application focuses on a clean user experience by validating URLs before generating QR codes, providing copy-to-clipboard functionality, and allowing QR codes to be downloaded as PNG images.
+The application focuses on delivering a simple and intuitive user experience while incorporating practical features such as URL validation, QR customization, clipboard functionality, and image downloads.
 
 ---
 
 ## ✨ Features
 
-- 🔗 Generate QR codes from website URLs
-- ✅ URL validation using JavaScript's `URL` API
-- 📋 Copy website URL to clipboard
-- 📥 Download generated QR code as a PNG image
-- 🚫 Prevent invalid URL generation
-- 🔒 Disabled action buttons until a QR code is generated
-- ⚡ Instant QR code generation
-- 🌙 Dark Mode
-- 🎨 Custom QR colors
-- 📱 Responsive and clean user interface
+* 🔗 Generate QR codes from website URLs
+* ✅ Validate URLs using JavaScript's native `URL` API
+* 🎨 Customize QR code colors
+* 📋 Copy URLs to the clipboard
+* 📥 Download generated QR codes as PNG images
+* 🚫 Prevent QR generation for invalid URLs
+* 🔒 Disable actions until a QR code is successfully generated
+* 📜 QR code generation history
+* ⚡ Instant QR code generation
+* 🌙 Dark mode support
+* 📱 Responsive design for desktop and mobile devices
 
 ---
 
-## 🛠️ Built With
+## 🛠️ Tech Stack
 
-- React
-- Vite
-- JavaScript (ES6+)
-- HTML5
-- CSS3
-- react-qr-code
-- html-to-image
+### Frontend
+
+* **React**
+* **JavaScript (ES6+)**
+* **HTML5**
+* **CSS3**
+
+### Tools & Libraries
+
+* **Vite** - Frontend build tool
+* **react-qr-code** - QR code generation
+* **html-to-image** - Convert QR components into downloadable images
 
 ---
 
-## 📂 Project Structure
+## 🏗️ Project Structure
 
-```
+```text
 src/
-│── components/
+│
+├── components/
 │   ├── Navbar.jsx
 │   ├── QRForm.jsx
 │   ├── QRPreview.jsx
 │   └── Footer.jsx
 │
-│── App.jsx
-│── App.css
-│── main.jsx
+├── App.jsx
+├── App.css
+└── main.jsx
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-### 1. Clone the repository
+Follow the steps below to run the project locally.
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Vaishnavi10706/qrify.git
 ```
 
-### 2. Navigate into the project
+### 2. Navigate to the Project Directory
 
 ```bash
 cd qrify
 ```
 
-### 3. Install dependencies
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Start the development server
+### 4. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-### 5. Open your browser and visit:
+The application will be available at:
 
-```
+```text
 http://localhost:5173
 ```
 
@@ -92,52 +103,68 @@ http://localhost:5173
 
 ## 📸 Preview
 
-<img width="1137" height="667" alt="image" src="https://github.com/user-attachments/assets/cb49d410-ce37-4f71-b033-262d6b7d9527" />
+<img width="1137" height="667" alt="QRify application preview" src="https://github.com/user-attachments/assets/cb49d410-ce37-4f71-b033-262d6b7d9527" />
 
 ---
 
-## 💡 How It Works
+## ⚙️ How It Works
 
 1. Enter a valid website URL.
-2. Click **Generate QR**.
-3. The application validates the URL.
+2. The application validates the provided URL.
+3. Click **Generate QR**.
 4. A QR code is generated instantly.
-5. Copy the website URL or download the QR code as a PNG.
+5. Customize the QR code appearance if required.
+6. Copy the original URL or download the generated QR code as a PNG image.
 
 ---
 
-## 📚 What I Learned
+## 🧠 What I Learned
 
-While building this project, I gained hands-on experience with:
+Building QRify provided hands-on experience with:
 
-- React Hooks (`useState`, `useRef`)
-- Component-based architecture
-- Props and state management
-- Conditional rendering
-- Form validation
-- Browser Clipboard API
-- DOM manipulation using refs
-- Downloading images from DOM elements
-- Working with third-party React libraries
-- Asynchronous JavaScript (`async/await`)
+* React component-based architecture
+* React Hooks, including `useState` and `useRef`
+* Props and state management
+* Conditional rendering
+* Form and URL validation
+* Browser Clipboard API
+* DOM interaction using React refs
+* Generating downloadable images from DOM elements
+* Integrating third-party React libraries
+* Asynchronous JavaScript using `async/await`
+* Responsive UI development
 
 ---
 
-## 🔮 Future Enhancements
+## 🔮 Future Improvements
 
-- 🖼️ Logo inside QR code
-- 📜 QR generation history
-- 🔔 Toast notifications
-- 📱 Enhanced mobile responsiveness
-- 📊 Scan analytics support
-- 🔗 URL shortening integration
+Potential features planned for future versions include:
+
+* 🖼️ Add custom logos to QR codes
+* 🔔 Toast notifications
+* 📱 Additional mobile UI improvements
+* 📊 QR scan analytics
+* 🔗 URL shortening integration
+* 💾 Persistent QR code storage
 
 ---
 
 ## 👩‍💻 Author
 
-Name: **Vaishnavi**
+**Vaishnavi**
+
+* GitHub: [@Vaishnavi10706](https://github.com/Vaishnavi10706)
 
 ---
 
-If you found this project useful, consider giving it a ⭐ on GitHub!
+## ⭐ Support
+
+If you found this project useful, please consider giving the repository a **star ⭐**.
+
+Your support is appreciated and encourages further development and improvements.
+
+---
+
+<p align="center">
+  Built with ❤️ using React
+</p>
