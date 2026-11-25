@@ -1,6 +1,6 @@
 # 🔗 QRify - QR Code Generator
 
-A modern and responsive **QR Code Generator** built with **React and Vite**. QRify allows users to instantly convert website URLs into QR codes with built-in validation, customization options, clipboard support, and PNG downloads.
+A modern and responsive **QR Code Generator** built with **React and Vite**. QRify allows users to instantly convert website URLs into QR codes with built in validation, customization options, clipboard support, and PNG downloads.
 
 🔗 **Live Demo:** [QRify](https://qrify-swart.vercel.app/)
 
@@ -122,7 +122,7 @@ http://localhost:5173
 
 Building QRify provided hands-on experience with:
 
-* React component-based architecture
+* React component based architecture
 * React Hooks, including `useState` and `useRef`
 * Props and state management
 * Conditional rendering
@@ -130,7 +130,7 @@ Building QRify provided hands-on experience with:
 * Browser Clipboard API
 * DOM interaction using React refs
 * Generating downloadable images from DOM elements
-* Integrating third-party React libraries
+* Integrating third party React libraries
 * Asynchronous JavaScript using `async/await`
 * Responsive UI development
 
@@ -153,7 +153,7 @@ Potential features planned for future versions include:
 
 **Vaishnavi**
 
-* GitHub: [@Vaishnavi10706](https://github.com/Vaishnavi10706)
+* **GitHub:** [@Vaishnavi10706](https://github.com/Vaishnavi10706)
 
 ---
 
